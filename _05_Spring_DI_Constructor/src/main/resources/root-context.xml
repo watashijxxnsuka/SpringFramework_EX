@@ -45,6 +45,18 @@
     <bean id="hyundaiCar" class="com.bit.springboard.coupling.HyundaiCar"
         init-method="initMethod"
         destroy-method="destroyMethod"
-        lazy-init="false"
-    />
+        lazy-init="true"
+    >
+        <!-- constructor-arg: 생성자의 매개변수를 전달하는 엘리먼트
+        일반적인 값을 매개변수로 전달할 때는 value 속성으로 지정.
+        bean 객체 타입의 값을 매개변수로 전달할 때는 ref 속성으로 지정.
+        -->
+        <!-- constructor-arg 지정 개수만큼 매개변수를 가지고 있는 생성자를 자동으로 호출한다. -->
+        <!-- index 속성: 전달할 매개변수의 순서를 지정 -->
+        <constructor-arg ref="appleCarAudio" index="0" />
+        <constructor-arg value="red" index="1" />
+    </bean>
+
+    <bean id="sonyCarAudio" class="com.bit.springboard.coupling.SonyCarAudio" />
+    <bean id="appleCarAudio" class="com.bit.springboard.coupling.AppleCarAudio" />
 </beans>

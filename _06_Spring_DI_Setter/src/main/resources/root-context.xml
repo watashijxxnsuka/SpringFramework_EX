@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <!-- ContextLoaderListener 객체에서 사용하는 설정파일.
         web.xml 을 읽으면서 제일 먼저 불러오는 설정파일이다.
         프로젝트에서 전반적으로 사용되는 자원(DB 커넥션, 트랜젝션처리, 파일업로드 등)을 생성하고 설정.
@@ -40,11 +43,36 @@
         init-method="initMethod"
         destroy-method="destroyMethod"
         scope="prototype"
-    />
+    >
+        <!-- property: name 속성값으로 지정된 멤버변수의 setter 메소드를 통해 의존성 주입하는 엘리먼트 -->
+        <!-- bean 객체 생성 직후에 setter 메소드를 호출해서 의존성을 주입한다. -->
+        <property name="color" value="blue" />
+        <property name="carAudio" ref="sonyCarAudio" />
+    </bean>
 
+<!--    <bean id="hyundaiCar" class="com.bit.springboard.coupling.HyundaiCar"-->
+<!--        init-method="initMethod"-->
+<!--        destroy-method="destroyMethod"-->
+<!--        lazy-init="true"-->
+<!--    >-->
+<!--        &lt;!&ndash; constructor-arg: 생성자의 매개변수를 전달하는 엘리먼트-->
+<!--        일반적인 값을 매개변수로 전달할 때는 value 속성으로 지정.-->
+<!--        bean 객체 타입의 값을 매개변수로 전달할 때는 ref 속성으로 지정.-->
+<!--        &ndash;&gt;-->
+<!--        &lt;!&ndash; constructor-arg 지정 개수만큼 매개변수를 가지고 있는 생성자를 자동으로 호출한다. &ndash;&gt;-->
+<!--        &lt;!&ndash; index 속성: 전달할 매개변수의 순서를 지정 &ndash;&gt;-->
+<!--        <constructor-arg ref="appleCarAudio" index="0" />-->
+<!--        <constructor-arg value="red" index="1" />-->
+<!--    </bean>-->
+
+    <!-- p namespace: property 엘리먼트를 간편하게 설정할 수 있는 네임스페이스.
+        bean 엘리먼트의 속성으로 property 엘리먼트를 지정할 수 있다.
+        p:변수명 => 리터럴값으로 setter 메소드 실행
+        p:변수명-ref => bean 객체를 참조하여 setter 메소드 실행
+        -->
     <bean id="hyundaiCar" class="com.bit.springboard.coupling.HyundaiCar"
-        init-method="initMethod"
-        destroy-method="destroyMethod"
-        lazy-init="false"
-    />
+            p:carAudio-ref="sonyCarAudio" p:color="blue" />
+
+    <bean id="sonyCarAudio" class="com.bit.springboard.coupling.SonyCarAudio" />
+    <bean id="appleCarAudio" class="com.bit.springboard.coupling.AppleCarAudio" />
 </beans>
