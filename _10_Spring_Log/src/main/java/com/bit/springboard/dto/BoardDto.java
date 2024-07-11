@@ -2,7 +2,7 @@ package com.bit.springboard.dto;
 
 import java.time.LocalDateTime;
 
-public class NoticeDto {
+public class BoardDto {
     private int id;
     private String title;
     private String content;
@@ -20,36 +20,20 @@ public class NoticeDto {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public int getCnt() {
-        return cnt;
-    }
-
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
-    }
-
-    public LocalDateTime getModdate() {
-        return moddate;
-    }
-
-    public void setModdate(LocalDateTime moddate) {
-        this.moddate = moddate;
-    }
-
-    public LocalDateTime getRegdate() {
-        return regdate;
-    }
-
-    public void setRegdate(LocalDateTime regdate) {
-        this.regdate = regdate;
     }
 
     public int getWRITER_ID() {
@@ -60,12 +44,28 @@ public class NoticeDto {
         this.WRITER_ID = WRITER_ID;
     }
 
-    public String getTitle() {
-        return title;
+    public LocalDateTime getRegdate() {
+        return regdate;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setRegdate(LocalDateTime regdate) {
+        this.regdate = regdate;
+    }
+
+    public LocalDateTime getModdate() {
+        return moddate;
+    }
+
+    public void setModdate(LocalDateTime moddate) {
+        this.moddate = moddate;
+    }
+
+    public int getCnt() {
+        return cnt;
+    }
+
+    public void setCnt(int cnt) {
+        this.cnt = cnt;
     }
 
     public String getNickname() {
@@ -78,7 +78,7 @@ public class NoticeDto {
 
     @Override
     public String toString() {
-        return "NoticeDto{" +
+        return "BoardDto{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
