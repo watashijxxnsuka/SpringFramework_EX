@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -49,7 +49,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -57,7 +57,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -65,7 +65,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -73,7 +73,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -81,7 +81,7 @@
                     <div class="card-body">
                         <h5 class="card-title">공지사항</h5>
                         <p class="card-text">작성일: 2024-06-26</p>
-                        <a href="notice-detail.html" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                        <a href="notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
             </div>
 
             <div class="container mt-3 mb-5 w-50 d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-secondary" onclick="location.href='post.html'">글 등록</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="location.href='post.do'">글 등록</button>
             </div>
         </main>
 
