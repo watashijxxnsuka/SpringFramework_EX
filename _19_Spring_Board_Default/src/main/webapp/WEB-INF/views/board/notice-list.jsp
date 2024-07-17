@@ -25,7 +25,7 @@
                                     <!-- fmt:formatDate => Date 타입의 날짜를 형식 지정에 맞게 표출 -->
                                     <fmt:formatDate value="${parsedRegdate}" pattern="yyyy-MM-dd" />
                                 </p>
-                                <a href="/board/notice-detail.do" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+                                <a href="/board/notice-detail.do?id=${notice.id}" class="btn btn-outline-secondary btn-sm" >자세히 보기</a>
                             </div>
                         </div>
                     </c:forEach>

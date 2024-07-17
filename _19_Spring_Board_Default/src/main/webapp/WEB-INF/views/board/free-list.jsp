@@ -52,7 +52,7 @@
                     </thead>
                     <tbody class="table-group-divider">
                         <c:forEach items="${freeBoardList}" var="freeBoard">
-                            <tr class="board-tr">
+                            <tr class="board-tr" onclick="location.href='/board/free-detail.do?id=${freeBoard.id}'">
                                 <td>${freeBoard.id}</td>
                                 <td>${freeBoard.title}</td>
                                 <td>${freeBoard.nickname}</td>
@@ -100,12 +100,5 @@
 
         <jsp:include page="${pageContext.request.contextPath}/footer.jsp"></jsp:include>
     </div>
-    <script>
-        $(() => {
-            $(".board-tr").on("click", (e) => {
-                window.location.href = "/board/free-detail.do";
-            })
-        });
-    </script>
 </body>
 </html>
