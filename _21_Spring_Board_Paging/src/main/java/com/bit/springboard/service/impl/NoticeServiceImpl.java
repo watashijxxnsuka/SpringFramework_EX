@@ -39,6 +39,8 @@ public class NoticeServiceImpl implements BoardService {
 
     @Override
     public List<BoardDto> getBoardList(Map<String, String> searchMap, Criteria cri) {
+        cri.setStartNum((cri.getPageNum() - 1) * cri.getAmount());
+
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("search", searchMap);
         paramMap.put("cri", cri);

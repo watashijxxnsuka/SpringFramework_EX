@@ -158,7 +158,10 @@ public class BoardController {
     public Map<String, Object> noticeListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
         boardService = applicationContext.getBean("noticeServiceImpl", BoardService.class);
 
-        cri.setAmount(cri.getPageNum() * 9);
+        // 이미 위에서 9로 세팅되어 있어서 안써도 상관없다.
+//        cri.setAmount(9);
+
+//        cri.setStartNum(cri.getPageNum() - 1);
 
         List<BoardDto> noticeList = boardService.getBoardList(searchMap, cri);
 

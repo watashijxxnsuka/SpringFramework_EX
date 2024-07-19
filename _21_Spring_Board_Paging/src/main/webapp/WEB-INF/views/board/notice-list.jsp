@@ -73,7 +73,14 @@
     <script>
         $(() => {
             $("#search-icon").on("click", (e) => {
+                $("input[name='pageNum']").val(1);
                 $("#search-form").submit();
+            });
+
+            $("input[name='searchKeyword']").on("keypress", (e) => {
+                if(e.key === 'Enter') {
+                    $("input[name='pageNum']").val(1);
+                }
             });
 
             const zeroDate = (date) => {
@@ -124,7 +131,7 @@
                                     `;
                                 }
                                 // console.log(htmlStr);
-                                $(".card-wrapper").html(htmlStr);
+                                $(".card-wrapper").append(htmlStr);
                             },
                             error: (err) => {
                                 console.log(err);
