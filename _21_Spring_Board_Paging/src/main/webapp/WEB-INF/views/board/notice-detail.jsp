@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
-<%@taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
 
@@ -38,11 +38,13 @@
                     </div>
                     <div class="form-group mt-3">
                         <label for="regdate">등록일</label>
-                        <input type="text" class="form-control" id="regdate" name="regdate" value="<javatime:format value="${notice.regdate}" pattern="yyyy-MM-dd"/>" readonly required>
+                        <input type="text" class="form-control" id="regdate" name="regdate"
+                               value="<javatime:format value="${notice.regdate}" pattern="yyyy-MM-dd"/>" required>
                     </div>
                     <div class="form-group mt-3">
                         <label for="moddate">수정일</label>
-                        <input type="text" class="form-control" id="moddate" name="moddate" value="<javatime:format value="${notice.moddate}" pattern="yyyy-MM-dd"/>" readonly required>
+                        <input type="text" class="form-control" id="moddate" name="moddate"
+                               value="<javatime:format value="${notice.moddate}" pattern="yyyy-MM-dd"/>" required>
                     </div>
                     <div class="form-group mt-3">
                         <label for="cnt">조회수</label>
@@ -62,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <c:if test="${loginMember ne null and loginMember.role eq 'ADMIN'}">
+                    <c:if test="${loginMember != null && loginMember.role == 'ADMIN'}">
                         <div class="container mt-3 mb-5 w-50 text-center">
                             <button type="submit" id="btn-update" class="btn btn-outline-secondary">수정</button>
                             <button type="button" id="btn-delete" class="btn btn-outline-secondary ml-2" onclick="location.href='/board/delete.do?id=${notice.id}&type=notice'">삭제</button>

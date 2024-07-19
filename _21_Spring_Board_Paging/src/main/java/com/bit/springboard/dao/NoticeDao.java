@@ -5,7 +5,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,15 +33,10 @@ public class NoticeDao {
         System.out.println("NoticeDao의 modify 메소드 실행 종료");
     }
 
-    public List<BoardDto> getNoticeList(Map<String, String> searchMap) {
+    public List<BoardDto> getNoticeList(Map<String, Object> paramMap) {
         System.out.println("NoticeDao의 getNoticeList 메소드 실행");
 
-        List<BoardDto> boardDtoList = new ArrayList<>();
-
-        boardDtoList = mybatis.selectList("NoticeDao.getNoticeList", searchMap);
-
-        System.out.println("NoticeDao의 getBoardList 메소드 실행 종료");
-        return boardDtoList;
+        return mybatis.selectList("NoticeDao.getNoticeList", paramMap);
     }
     
     public void delete(int id) {
@@ -58,6 +52,7 @@ public class NoticeDao {
 
         return mybatis.selectOne("NoticeDao.getNotice", id);
     }
+
     public void updateCnt(int id) {
         mybatis.update("NoticeDao.updateCnt", id);
     }

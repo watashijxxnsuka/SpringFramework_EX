@@ -1,5 +1,13 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: bitcamp
+  Date: 24. 7. 12.
+  Time: 오후 5:15
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%--<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>--%>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
 <html>
 <head>
@@ -21,13 +29,21 @@
                         <div class="col-3">
                             <select class="form-select" name="searchCondition">
                                 <option value="all"
-                                        <c:if test="${searchMap == null || searchMap.searchCondition == 'all'}">selected</c:if>>전체</option>
+                                        <c:if test="${searchMap == null || searchMap.searchCondition == 'all'}">
+                                            selected
+                                        </c:if>>전체</option>
                                 <option value="title"
-                                        <c:if test="${searchMap == null || searchMap.searchCondition == 'title'}">selected</c:if>>제목</option>
+                                        <c:if test="${searchMap.searchCondition == 'title'}">
+                                            selected
+                                        </c:if>>제목</option>
                                 <option value="content"
-                                        <c:if test="${searchMap == null || searchMap.searchCondition == 'content'}">selected</c:if>>내용</option>
+                                        <c:if test="${searchMap.searchCondition == 'content'}">
+                                            selected
+                                        </c:if>>내용</option>
                                 <option value="writer"
-                                        <c:if test="${searchMap == null || searchMap.searchCondition == 'writer'}">selected</c:if>>작성자</option>
+                                        <c:if test="${searchMap.searchCondition == 'writer'}">
+                                            selected
+                                        </c:if>>작성자</option>
                             </select>
                         </div>
                         <div class="col-9">
@@ -80,7 +96,9 @@
                         </li>
                     </c:if>
 
-                    <c:forEach begin="${page.startPage}" end="${page.endPage}" var="number">
+                    <c:forEach begin="${page.startPage}"
+                               end="${page.endPage}"
+                               var="number">
                         <li class="page-item">
                             <a class="page-link link-secondary" href="${number}">${number}</a>
                         </li>
@@ -107,18 +125,25 @@
     </div>
     <script>
         $(() => {
-            $('#search-icon').on('click', (e) => {
-                $('#search-form').submit();
+            $("#search-icon").on("click", (e) => {
+                $("input[name='pageNum']").val(1);
+                $("#search-form").submit();
             });
 
-            $(".pagination a").on('click', (e) => {
+            $("input[name='searchKeyword']").on("keypress", (e) => {
+                if(e.key === 'Enter') {
+                    $("input[name='pageNum']").val(1);
+                }
+            });
+
+            $(".pagination a").on("click", (e) => {
                 e.preventDefault();
 
-                console.log($(e.target).attr("href"));
+                // console.log($(e.target).attr("href"));
 
-                $('input[name="pageNum"]').val($(e.target).attr("href"));
+                $("input[name='pageNum']").val($(e.target).attr("href"));
 
-                $('#search-form').submit();
+                $("#search-form").submit();
             });
         });
     </script>
